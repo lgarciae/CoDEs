@@ -1,5 +1,6 @@
 <?php
-  require("conectDB.php");
+    require("conectDB.php");
+    session_start();
 
     if (isset($_POST["enviar"])){
       $proyecto = strtoupper(htmlspecialchars($_POST["proyecto"]));
@@ -17,7 +18,7 @@
       try {
           $stmt->execute();
             echo "<script>
-                    alert('El proyecto $proyecto a sido agregado de manera adecuada !!');
+                    alert('El proyecto $proyecto ha sido agregado de manera adecuada !!');
                         location.href='./capProyecto.php';
                   </script>";
       } catch(PDOException $e) {

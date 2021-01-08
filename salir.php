@@ -9,5 +9,5 @@
     echo "<script>
           alert(' ! Hasta luego $usuario ¡' );
           location.href='./index.php';
-    </script>";
+          </script>";
 ?>

@@ -1,5 +1,6 @@
 <?php
-  require("conectDB.php");
+    require("conectDB.php");
+    session_start();
 
     if (isset($_POST["enviar"])){
       $nombre   = strtoupper(htmlspecialchars($_POST["nombre"]));
@@ -19,7 +20,7 @@
       $sql = "CALL sp_insert_proveedor('$nombre','$direc1','$direc2','$url','$pais', '$estado', '$moneda', '$cp', '$rfc','$telefono','$correo');";
       $conn->exec($sql);
       echo "<script>
-              alert('El proveedor $nombre con correo $correo a sido agregado exitosamente !!');
+              alert('El proveedor $nombre con correo $correo ha sido agregado exitosamente !!');
               location.href='./capProveedor.php';
             </script>";
       } catch(PDOException $e) {
