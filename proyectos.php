@@ -31,6 +31,7 @@
                     <th>Colaborador(es)</th>
                     <th>Fecha Inicio</th>
                     <th>Fecha Final</th>
+                    <th>Días Invertidos</th>
                     <th>Fase</th>
                     <th >Observaciones</th>
         						<th>Transacción</th>
@@ -44,6 +45,12 @@
                      <td><?php echo $d['pr_colaboradores'];?></td>
                      <td><?php echo date("d/m/Y",strtotime($d['pr_inicio']));?></td>
                      <td><?php echo date("d/m/Y",strtotime($d['pr_fin']));?></td>
+                     <?php
+                      $datetime1 = date_create($d['pr_inicio']);
+                      $datetime2 = date_create($d['pr_fin']);
+                      $interval  = date_diff($datetime1, $datetime2);
+                     ?>
+                     <td><?php echo $interval->format('%R%a días');?></td>
                      <td><?php echo $d['pr_status'];?></td>
                      <td><?php echo $d['pr_notas'];?></td>
                      <td class="text-center">

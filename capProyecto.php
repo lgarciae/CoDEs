@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-group col-md-6">
-          <label for="country">Status</label>
+          <label for="estatus">Status</label>
             <select id="estatus" name="estatus" class="form-control">
               <option value="ANALISIS DE REQUERIMIENTOS">ANALISIS DE REQUERIMIENTOS</option>
               <option value="DISEÑO">DISEÑO</option>

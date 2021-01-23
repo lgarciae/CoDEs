@@ -30,7 +30,7 @@
          <span class="caret"></span></a>
          <ul class="dropdown-menu">
            <li><a href="./proyectos.php"><i class="fa fa-fw fa-book"></i> Proyectos</a></li>
-           <li><a href="./repProyectos.php" target="_blank"><i class="fa fa-fw fa-print"></i> Reporteo</a></li>
+           <li><a href="./reporteProyectos.php"><i class="fa fa-fw fa-search"></i> Reporteo</a></li>
          </ul>
        </li>
 
@@ -38,6 +38,7 @@
          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Configuración
          <span class="caret"></span></a>
          <ul class="dropdown-menu">
+           <li><a href="#"><i class="fa fa-fw fa-search"></i> Inventarios</a></li>
            <li><a href="#"><i class="fa fa-fw fa-cart-plus"></i> Producto</a></li>
            <li><a href="#"><i class="fa fa-fw fa-industry"></i> Proveedores</a></li>
            <li><a href="#"><i class="fa fa-fw fa-user"></i> Usuarios</a></li>

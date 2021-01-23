@@ -23,4 +23,4 @@
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <title>Coordinación de Desarrollo | © Tienda de Descuento Arteli - <?php echo date("Y");?></title>
   </head>
-  </html>
+</html>
