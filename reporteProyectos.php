@@ -18,7 +18,7 @@
     			<hr>
 
           <form method="post">
-              <label for="colaborador">Colaborador(es)..:</label>
+              <label for="colaborador">Colaborador ..:</label>
               <select name="colaborador" required>
                  <option value=""> - Seleccione - </option>
                  <?php
@@ -40,7 +40,7 @@
                 $datos   = $stmt->fetchAll(PDO::FETCH_ASSOC);
               }
             ?>
-            <h5><?php echo $colabora; ?></h5>
+            <h3><?php echo $colabora; ?></h3>
             <hr>
 
       			<?php if(count($datos)>0):?>

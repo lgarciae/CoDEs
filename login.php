@@ -23,7 +23,7 @@
 		            <input type="password" name="password" class="form-control" required="required">
 		        </div>
 		        <div class="form-group">
-		            <button type="submit" class="btn btn-warning btn-block" name="enviar">Iniciar sesión</button>
+		            <button type="submit" class="btn btn-primary btn-block" name="enviar">Iniciar sesión</button>
 		        </div>
 		        <div class="clearfix">
 		            <label class="pull-left checkbox-inline"><input type="checkbox"> Recuérdame</label>

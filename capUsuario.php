@@ -29,8 +29,8 @@
           <input type="password" class="form-control" id="contra" name="contra" required>
         </div>
 
-        <button type="submit" class="btn btn-warning" name="enviar">Crear tu cuenta</button>
-        <button type="reset" class="btn btn-default" name="borrar">Limpiar</button>
+        <button type="submit" class="btn btn-primary" name="enviar">Crear tu cuenta</button>
+        <!--<button type="reset" class="btn btn-default" name="borrar">Limpiar</button>-->
         <a class="btn btn-danger pull-right" href="./index.php">Salir</a>
         <hr>
 
