@@ -96,7 +96,9 @@
 
   				</table>
   			<?php else:?>
-  				<p class="alert alert-warning">No hay datos !!!</p>
+          <div class="alert alert-warning">
+            <strong>Informativo !!</strong> No hay datos que desplegar.
+          </div>
   			<?php endif; ?>
     		</div>
     	</div>
@@ -106,13 +108,6 @@
         $(document).ready(function() {
             $('#proyectos').DataTable()
             } );
-    </script>
-
-    <script type="text/javascript">
-      function valor(){
-        d = document.getElementById("estatus").value;
-        alert(d);
-      }
     </script>
 
     <footer style="text-align:center;">© Tienda de Descuento Arteli - <?php echo date("Y");?></footer>

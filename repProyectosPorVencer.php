@@ -22,6 +22,7 @@
               <input type="date" id="fecha" name="fecha" required>
               <button type="submit" class="btn btn-primary" name="enviar"><i class="fa fa-search" aria-hidden="true"></i> Consultar</button>
           </form>
+          <hr>
            <?php
               if (isset($_POST["enviar"])){
 
@@ -29,14 +30,12 @@
                 $dato = strtotime($fecha);    // Convierte el string en formato de fecha en php
                 $dato = date('Y-m-d',$dato);  // lo covnierte a formao de fecha en MySQL
 
-                $stmt  = $conn->prepare("SELECT * FROM proyectos WHERE pr_fin <='$dato' AND pr_status <> 'PRODUCCION' ");
+                $stmt  = $conn->prepare("SELECT * FROM proyectos WHERE pr_fin <='$dato' AND pr_status <> 'PRODUCCION' GROUP BY pr_fin");
                 $stmt->execute();
                 $datos = $stmt->fetchAll(PDO::FETCH_ASSOC);
               }
-            ?>
-          <label for="">Fecha..:</label>
-          <input type="text" name="" value="<?php echo date('d-m-Y',strtotime($fecha));?>" disabled>
-          <hr>
+          ?>
+
       			<?php if(count($datos)>0):?>
       				<table id="proyectos" class="table table-striped table-bordered">
       					<thead>
@@ -90,7 +89,9 @@
 
   				</table>
   			<?php else:?>
-  				<p class="alert alert-warning">No hay datos !!!</p>
+          <div class="alert alert-warning">
+            <strong>Informativo !!</strong> No hay datos que desplegar.
+          </div>
   			<?php endif; ?>
     		</div>
     	</div>

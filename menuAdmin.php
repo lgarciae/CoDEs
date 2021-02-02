@@ -30,8 +30,15 @@
          <span class="caret"></span></a>
          <ul class="dropdown-menu">
            <li><a href="./proyectos.php"><i class="fa fa-fw fa-book"></i> Proyectos</a></li>
-           <li><a href="./reporteProyectos.php"><i class="fa fa-fw fa-search"></i> Reporte Proyecto por Colaborador</a></li>
-           <li><a href="./repProyectosPorVencer.php"><i class="fa fa-fw fa-search"></i> Reporte Proyecto por Vencer</a></li>
+         </ul>
+       </li>
+
+       <li class="dropdown">
+         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reportes
+         <span class="caret"></span></a>
+         <ul class="dropdown-menu">
+           <li><a href="./reporteProyectos.php"><i class="fa fa-fw fa-search"></i> Proyecto por Colaborador</a></li>
+           <li><a href="./repProyectosPorVencer.php"><i class="fa fa-fw fa-search"></i> Proyecto por Vencer</a></li>
          </ul>
        </li>
 
