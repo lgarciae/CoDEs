@@ -1,6 +1,7 @@
 <?php
   require("cabecera.php");
   require("conectDB.php");
+  session_start();
  ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -23,9 +24,10 @@
 
     					<br><br>
         			<?php if(count($datos)>0):?>
-        				<table id="proyectos" class="table table-striped table-bordered">
+        				<table id="proyectos" class="table table-bordered">
         					<thead>
         						<th>Id</th>
+                    <th>¿Es acuerdo?</th>
         						<th>Nombre</th>
                     <th>Solicitó</th>
                     <th>Colaborador(es)</th>
@@ -40,6 +42,7 @@
                     <?php foreach($datos as $d):?>
                    <tr>
                      <td><?php echo $d['id_proyecto'];?></td>
+                     <td class="text-center"><?php echo "<span class='badge'>"; echo ($d['pr_acuerdo']==1)?'SI':'NO'; echo "</span";?></td>
                      <td><?php echo $d['pr_nombre'];?></td>
                      <td><?php echo $d['pr_solicito'];?></td>
                      <td><?php echo $d['pr_colaboradores'];?></td>
@@ -63,6 +66,7 @@
                   <tfoot>
                     <tr>
                       <th>Id</th>
+                      <th>¿Es acuerdo?</th>
           						<th>Nombre</th>
                       <th>Solicitó</th>
                       <th>Colaborador(es)</th>

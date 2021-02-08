@@ -20,7 +20,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <a class="navbar-brand" href="#">CoDES</a>
+       <a class="navbar-brand" href="#">Coordinación de Desarrollo</a>
      </div>
      <ul class="nav navbar-nav"> <!-- Elementos del Menu cargados a la izquierda-->
        <li class="active"><a href="#"><i class="fa fa-fw fa-home"></i> Inicio</a></li>
@@ -39,6 +39,8 @@
          <ul class="dropdown-menu">
            <li><a href="./reporteProyectos.php"><i class="fa fa-fw fa-search"></i> Proyecto por Colaborador</a></li>
            <li><a href="./repProyectosPorVencer.php"><i class="fa fa-fw fa-search"></i> Proyecto por Vencer</a></li>
+           <li><a href="./repAcuerdos.php"><i class="fa fa-fw fa-search"></i> Listado de Acuerdos</a></li>
+
          </ul>
        </li>
 

@@ -12,39 +12,27 @@
     <div class="container-fluid">
     	<div class="row">
     		<div class="col-md-12">
-          <br>
-    			<h1><i class="fa fa-fw fa-book"></i> Proyectos por Vencer </h1>
-    			<hr>
-
-          <form method="post">
-              <label for="fecha">Fecha de Entrega ..:</label>
-              <input type="date" id="fecha" name="fecha" required>
-              <button type="submit" class="btn btn-primary" name="enviar"><i class="fa fa-search" aria-hidden="true"></i> Consultar</button>
-              <a href="./menuAdmin.php" class="btn btn-danger"> Salir</a>
-          </form>
+    			<h1><i class="fa fa-fw fa-book"></i> Listado de Acuerdos - Dirección de Aministración </h1>
+          <a href="./menuAdmin.php" class="btn btn-danger"> Salir</a>
+          <a href="./export_excel.php?tabla=proyectos&archivo=tProyectos" class="btn btn-default pull-right" name="exportar" role="button">Descargar a Excel</a>
           <hr>
+
            <?php
-              if (isset($_POST["enviar"])){
-
-                $fecha = $_POST["fecha"];     //Recibe un string en formato dd-mm-yyyy
-                $dato  = strtotime($fecha);    // Convierte el string en formato de fecha en php
-                $dato  = date('Y-m-d',$dato);  // lo convierte a formato de fecha en MySQL
-
-                $stmt  = $conn->prepare("SELECT * FROM proyectos WHERE pr_fin <='$dato' AND pr_status <> 'PRODUCCION' ORDER BY pr_fin DESC, pr_status ASC");
+                $stmt    = $conn->prepare("SELECT * FROM proyectos WHERE pr_baja <> 1 AND pr_acuerdo <> 0 ORDER BY pr_inicio");
                 $stmt->execute();
-                $datos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-              }
-          ?>
+                $datos   = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            ?>
 
       			<?php if(count($datos)>0):?>
-      				<table id="proyectos" class="table table-striped table-bordered">
+      				<table id="proyectos" class="table table-bordered">
       					<thead>
       						<th>Id</th>
+                  <th>¿Es acuerdo?</th>
       						<th>Nombre</th>
                   <th>Solicitó</th>
                   <th>Colaborador(es)</th>
                   <th>Fecha Inicio</th>
-                  <th>Fecha de Entrega</th>
+                  <th>Fecha Final</th>
                   <th>Días Invertidos</th>
                   <th>Estatus</th>
                   <th >Observaciones</th>
@@ -54,6 +42,7 @@
                   <?php foreach($datos as $d):?>
                  <tr>
                    <td><?php echo $d['id_proyecto'];?></td>
+                   <td class="text-center"><?php echo "<span class='badge'>"; echo ($d['pr_acuerdo']==1)?'SI':'NO'; echo "</span";?></td>
                    <td><?php echo $d['pr_nombre'];?></td>
                    <td><?php echo $d['pr_solicito'];?></td>
                    <td><?php echo $d['pr_colaboradores'];?></td>
@@ -76,6 +65,7 @@
                 <tfoot>
                   <tr>
                     <th>Id</th>
+                    <th>¿Es acuerdo?</th>
         						<th>Nombre</th>
                     <th>Solicitó</th>
                     <th>Colaborador(es)</th>

@@ -13,7 +13,7 @@
     	<div class="row">
     		<div class="col-md-12">
           <br>
-          <a href="./menuAdmin.php"   class="btn btn-danger pull-right"> Salir</a>
+
     			<h1><i class="fa fa-fw fa-book"></i> Colaborador por Proyecto </h1>
     			<hr>
 
@@ -30,6 +30,7 @@
                  ?>
                </select>
               <button type="submit" class="btn btn-primary" name="enviar"><i class="fa fa-search" aria-hidden="true"></i> Consultar</button>
+              <a href="./menuAdmin.php" class="btn btn-danger"> Salir</a>
           </form>
           <hr>
            <?php
