@@ -23,7 +23,7 @@
        <a class="navbar-brand" href="#">Coordinación de Desarrollo</a>
      </div>
      <ul class="nav navbar-nav"> <!-- Elementos del Menu cargados a la izquierda-->
-       <li class="active"><a href="#"><i class="fa fa-fw fa-home"></i> Inicio</a></li>
+       <li class="active"><a href="#"><i class="fa fa-fw fa-home"></i> Dashboard</a></li>
 
        <li class="dropdown">
          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Seguimiento
@@ -37,9 +37,9 @@
          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reportes
          <span class="caret"></span></a>
          <ul class="dropdown-menu">
-           <li><a href="./reporteProyectos.php"><i class="fa fa-fw fa-search"></i> Proyecto por Colaborador</a></li>
-           <li><a href="./repProyectosPorVencer.php"><i class="fa fa-fw fa-search"></i> Proyecto por Vencer</a></li>
-           <li><a href="./repAcuerdos.php"><i class="fa fa-fw fa-search"></i> Listado de Acuerdos</a></li>
+           <li><a href="./reporteProyectos.php"><i class="fa fa-fw"></i> Proyecto por Colaborador</a></li>
+           <li><a href="./repAcuerdos.php"><i class="fa fa-fw"></i> Acuerdos de la Administración</a></li>
+           <li><a href="./repProyectos.php"><i class="fa fa-fw"></i> Impresión de Acuerdos</a></li>
 
          </ul>
        </li>

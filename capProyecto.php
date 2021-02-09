@@ -46,8 +46,8 @@
               <option value="DESARROLLO">DESARROLLO</option>
               <option value="PRUEBAS">PRUEBAS</option>
               <option value="PRODUCCION">PRODUCCION</option>
-              <option value="GO LIVE">DETENIDO</option>
-              <option value="MANTENIMIENTO">ACTUALIZACION</option>
+              <option value="DETENIDO">DETENIDO</option>
+              <option value="ACTUALIZACION">ACTUALIZACION</option>
             </select>
         </div>
 

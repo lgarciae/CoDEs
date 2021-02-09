@@ -45,9 +45,10 @@
             <hr>
 
       			<?php if(count($datos)>0):?>
-      				<table id="proyectos" style="width:100%" class="table table-striped table-bordered">
+      				<table id="proyectos" class="table table-hover table-bordered">
       					<thead>
       						<th>Id</th>
+                  <th>¿Es acuerdo?</th>
       						<th>Nombre</th>
                   <th>Solicitó</th>
                   <th>Colaborador(es)</th>
@@ -62,11 +63,12 @@
                   <?php foreach($datos as $d):?>
                  <tr>
                    <td><?php echo $d['id_proyecto'];?></td>
+                   <td class="text-center"><?php echo "<span class='badge'>"; echo ($d['pr_acuerdo']==1)?'SI':'NO'; echo "</span";?></td>
                    <td><?php echo $d['pr_nombre'];?></td>
                    <td><?php echo $d['pr_solicito'];?></td>
                    <td><?php echo $d['pr_colaboradores'];?></td>
-                   <td><?php echo date("d/m/Y",strtotime($d['pr_inicio']));?></td>
-                   <td><?php echo date("d/m/Y",strtotime($d['pr_fin']));?></td>
+                   <td><?php echo $d['pr_inicio'];?></td>
+                   <td><?php echo $d['pr_fin'];?></td>
                    <?php
                     $datetime1 = date_create($d['pr_inicio']);
                     $datetime2 = date_create($d['pr_fin']);
@@ -84,11 +86,13 @@
                 <tfoot>
                   <tr>
                     <th>Id</th>
+                    <th>¿Es acuerdo?</th>
         						<th>Nombre</th>
                     <th>Solicitó</th>
                     <th>Colaborador(es)</th>
                     <th>Fecha Inicio</th>
                     <th>Fecha Final</th>
+                    <th>Días Invertidos</th>
                     <th>Fase</th>
                     <th >Observaciones</th>
         						<th>Transacción</th>

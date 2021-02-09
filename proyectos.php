@@ -24,7 +24,7 @@
 
     					<br><br>
         			<?php if(count($datos)>0):?>
-        				<table id="proyectos" class="table table-bordered">
+        				<table id="proyectos" class="table table-hover table-bordered">
         					<thead>
         						<th>Id</th>
                     <th>¿Es acuerdo?</th>
@@ -46,8 +46,10 @@
                      <td><?php echo $d['pr_nombre'];?></td>
                      <td><?php echo $d['pr_solicito'];?></td>
                      <td><?php echo $d['pr_colaboradores'];?></td>
-                     <td><?php echo date("d/m/Y",strtotime($d['pr_inicio']));?></td>
-                     <td><?php echo date("d/m/Y",strtotime($d['pr_fin']));?></td>
+                     <td><?php echo $d['pr_inicio'];?></td>
+                     <td><?php echo $d['pr_fin'];?></td>
+                     <!--<td><?php echo date("d/m/Y",strtotime($d['pr_inicio']));?></td>
+                     <td><?php echo date("d/m/Y",strtotime($d['pr_fin']));?></td>-->
                      <?php
                       $datetime1 = date_create($d['pr_inicio']);
                       $datetime2 = date_create($d['pr_fin']);

@@ -12,27 +12,28 @@
     <div class="container-fluid">
     	<div class="row">
     		<div class="col-md-12">
-    			<h1><i class="fa fa-fw fa-book"></i> Listado de Acuerdos - Dirección de Aministración </h1>
-          <a href="./menuAdmin.php" class="btn btn-danger"> Salir</a>
+    			<h1><i class="fa fa-fw fa-book"></i> Listado de Acuerdos - Dirección de Administración </h1>
+          <p><a href="./menuAdmin.php" class="btn btn-danger pull-right"> Salir</a></p>
           <a href="./export_excel.php?tabla=proyectos&archivo=tProyectos" class="btn btn-default pull-right" name="exportar" role="button">Descargar a Excel</a>
+          <br>
           <hr>
 
            <?php
-                $stmt    = $conn->prepare("SELECT * FROM proyectos WHERE pr_baja <> 1 AND pr_acuerdo <> 0 ORDER BY pr_inicio");
+                $stmt    = $conn->prepare("SELECT * FROM proyectos where pr_baja <> 1 AND pr_acuerdo <> 0 ORDER BY pr_inicio ASC");
                 $stmt->execute();
                 $datos   = $stmt->fetchAll(PDO::FETCH_ASSOC);
             ?>
 
       			<?php if(count($datos)>0):?>
-      				<table id="proyectos" class="table table-bordered">
+      				<table id="proyectos" class="table table-hover table-bordered">
       					<thead>
       						<th>Id</th>
                   <th>¿Es acuerdo?</th>
       						<th>Nombre</th>
                   <th>Solicitó</th>
                   <th>Colaborador(es)</th>
-                  <th>Fecha Inicio</th>
-                  <th>Fecha Final</th>
+                  <th style="width=100px">Fecha Inicio</th>
+                  <th style="width=100px">Fecha Final</th>
                   <th>Días Invertidos</th>
                   <th>Estatus</th>
                   <th >Observaciones</th>
@@ -46,8 +47,8 @@
                    <td><?php echo $d['pr_nombre'];?></td>
                    <td><?php echo $d['pr_solicito'];?></td>
                    <td><?php echo $d['pr_colaboradores'];?></td>
-                   <td><?php echo date("d/m/Y",strtotime($d['pr_inicio']));?></td>
-                   <td><?php echo date("d/m/Y",strtotime($d['pr_fin']));?></td>
+                   <td style="width=100px;"><?php echo $d['pr_inicio'];?></td>
+                   <td style="width=100px;"><?php echo $d['pr_fin'];?></td>
                    <?php
                     $datetime1 = date_create($d['pr_inicio']);
                     $datetime2 = date_create($d['pr_fin']);
@@ -71,6 +72,7 @@
                     <th>Colaborador(es)</th>
                     <th>Fecha Inicio</th>
                     <th>Fecha Final</th>
+                    <th>Días Invertidos</th>
                     <th>Fase</th>
                     <th >Observaciones</th>
         						<th>Transacción</th>
