@@ -12,9 +12,9 @@
     			<h1><i class="fa fa-fw fa-book"></i> Proyectos</h1>
     			<hr>
           <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalAgregarProyecto"><i class="fa fa-plus" aria-hidden="true"></i> Agregar Nuevo Proyecto</button>-->
-    			<a href="./capProyecto.php" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Agregar Nuevo Proyecto</a>
-          <a href="./menuAdmin.php"   class="btn btn-danger"> Salir</a>
-          <a href="./export_excel.php?tabla=proyectos&archivo=tProyectos" class="btn btn-default pull-right" name="exportar" role="button">Descargar a Excel</a>
+    			<a href="./capProyecto.php" class="btn btn-primary" data-toggle="tooltip" title="Dar de alta un nuevo proyecto"><i class="fa fa-plus" aria-hidden="true"></i> Agregar Nuevo Proyecto</a>
+          <a href="./menuAdmin.php"   class="btn btn-danger"  data-toggle="tooltip" title="Abandonar pantalla"> Salir</a>
+          <a href="./export_excel.php?tabla=proyectos&archivo=tProyectos" class="btn btn-success pull-right" data-toggle="tooltip" title="Descargar en un archivo Excel" name="exportar" role="button">Descargar a Excel</a>
 
               <?php
                 $stmt = $conn->prepare("SELECT * FROM proyectos WHERE pr_baja <> 1");
@@ -27,40 +27,37 @@
         				<table id="proyectos" class="table table-hover table-bordered">
         					<thead>
         						<th>Id</th>
-                    <th>¿Es acuerdo?</th>
-        						<th>Nombre</th>
-                    <th>Solicitó</th>
-                    <th>Colaborador(es)</th>
-                    <th>Fecha Inicio</th>
-                    <th>Fecha Final</th>
-                    <th>Días Invertidos</th>
-                    <th>Fase</th>
-                    <th >Comentarios</th>
+                    <th style="width:200px;" class="text-center">Nombre</th>
+                    <th style="width:200px;" class="text-center">Solicitó</th>
+                    <th style="width:200px;" class="text-center">Colaborador(es)</th>
+                    <th style="width:150px;" class="text-center">Inicio</th>
+                    <th style="width:150px;" class="text-center">Final</th>
+                    <th style="width:75px;"  class="text-center">Días Invertidos</th>
+                    <th style="width:75px;"  class="text-center">¿Es acuerdo?</th>
+                    <th style="width:150px;" class="text-center">Fase</th>
+                    <th style="width:180px;" class="text-center">Comentarios</th>
         						<th>Transacción</th>
         					</thead>
                   <tbody>
                     <?php foreach($datos as $d):?>
                    <tr>
                      <td><?php echo $d['id_proyecto'];?></td>
-                     <td class="text-center"><?php echo "<span class='badge'>"; echo ($d['pr_acuerdo']==1)?'SI':'NO'; echo "</span";?></td>
                      <td><?php echo $d['pr_nombre'];?></td>
                      <td><?php echo $d['pr_solicito'];?></td>
                      <td><?php echo $d['pr_colaboradores'];?></td>
                      <td><?php echo $d['pr_inicio'];?></td>
                      <td><?php echo $d['pr_fin'];?></td>
-                     <!--<td><?php echo date("d/m/Y",strtotime($d['pr_inicio']));?></td>
-                     <td><?php echo date("d/m/Y",strtotime($d['pr_fin']));?></td>-->
                      <?php
                       $datetime1 = date_create($d['pr_inicio']);
                       $datetime2 = date_create($d['pr_fin']);
                       $interval  = date_diff($datetime1, $datetime2);
                      ?>
-                     <td><?php echo $interval->format('%R%a días');?></td>
+                     <td><?php echo $interval->format('%R%a');?></td>
+                     <td class="text-center"><?php echo "<span style='color:white;' class='badge'>"; echo ($d['pr_acuerdo']==1)?'SI':'NO'; echo "</span";?></td>
                      <td><?php echo $d['pr_status'];?></td>
                      <td><?php echo $d['pr_notas'];?></td>
                      <td class="text-center">
                        <a href="./modificaProyecto.php?id=<?php echo $d['id_proyecto']?>" class="btn btn-default btn-xs" data-toggle="tooltip" title="Editar"><i class="fa fa-pencil fa-fw"></i></a>
-                       <a href="#" class="btn btn-default btn-xs" data-toggle="modal" data-togle="tooltip" title="Visualizar" data-target="#Comentarios"><i class="fa fa-search fa-fw"></i></a>
                      </td>
                    </tr>
                   <?php endforeach; ?>
@@ -68,15 +65,16 @@
                   <tfoot>
                     <tr>
                       <th>Id</th>
-                      <th>¿Es acuerdo?</th>
-          						<th>Nombre</th>
-                      <th>Solicitó</th>
-                      <th>Colaborador(es)</th>
-                      <th>Fecha Inicio</th>
-                      <th>Fecha Final</th>
-                      <th>Fase</th>
-                      <th >Comentarios</th>
-          						<th>Transacción</th>
+                      <th style="width:200px;" class="text-center">Nombre</th>
+                      <th style="width:200px;" class="text-center">Solicitó</th>
+                      <th style="width:200px;" class="text-center">Colaborador(es)</th>
+                      <th style="width:150px;" class="text-center">Inicio</th>
+                      <th style="width:150px;" class="text-center">Final</th>
+                      <th style="width:75px;"  class="text-center">Días Invertidos</th>
+                      <th style="width:75px;"  class="text-center">¿Es acuerdo?</th>
+                      <th style="width:150px;" class="text-center">Fase</th>
+                      <th style="width:180px;" class="text-center">Comentarios</th>
+                      <th>Transacción</th>
                     </tr>
                   </tfoot>
 

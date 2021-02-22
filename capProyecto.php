@@ -2,30 +2,30 @@
   require("cabecera.php");
   session_start();
 ?>
-    <!--<body>-->
-    <div class="container" style="margin: auto; background-color:#fff; padding:auto;">
-      <div class="row">
-      <img src="./img/imagen.png" class="img-responsive" alt="Imagen Corporativa" width="150" height="100">
 
+    <br>
+    <!--<body>-->
+    <div class="container" style="margin: auto; width:90%; background-color:#fff; padding:auto; opacity:0.8; -webkit-box-shadow: 9px 15px 13px 0px rgba(0,0,0,0.75); -moz-box-shadow: 9px 15px 13px 0px rgba(0,0,0,0.75); box-shadow: 9px 15px 13px 0px rgba(0,0,0,0.75);">
+      <div class="row" style="padding:5px 15px 5px 15px;">
       <form method="post" id="frmProyectos">
         <div class="encabezado">
-          <h3>Nuevo Proyecto</h3>
+          <h3 style="margin: auto;">Nuevo Proyecto</h3>
           <hr>
         </div>
 
         <div class="form-group col-md-12">
           <label for="proyecto">Nombre Proyecto.:</label>
-          <input type="text" class="form-control" id="proyecto" name="proyecto" placeholder="Nombre proyecto" required autofocus>
+          <input type="text" class="form-control" id="proyecto" name="proyecto" required autofocus>
         </div>
 
         <div class="form-group col-md-6">
           <label for="colabora">Colaborador(es).:</label>
-          <input type="text" class="form-control" id="colabora" name="colabora" placeholder="Colaborador/(es)" required>
+          <input type="text" class="form-control" id="colabora" name="colabora" required>
         </div>
 
         <div class="form-group col-md-6">
           <label for="solicito">Solicitó.:</label>
-          <input type="text" class="form-control" id="solicito" name="solicito" placeholder="Solicitó" required>
+          <input type="text" class="form-control" id="solicito" name="solicito" required>
         </div>
 
         <div class="form-group col-md-3">
@@ -35,7 +35,7 @@
 
         <div class="form-group col-md-3">
           <label for="final">Fecha Final</label>
-          <input type="date" class="form-control" id="ffinal" name="ffinal" placeholder="Fecha Final" required>
+          <input type="date" class="form-control" id="ffinal" name="ffinal" placeholder="Fecha Final">
         </div>
 
         <div class="form-group col-md-3">
@@ -59,13 +59,17 @@
           </select>
         </div>
 
+        <div class="form-group col-md-12">
+          <label for="notas">Comentarios.:</label><br>
+          <textarea name="notas" rows="10" style="width:100%;"></textarea>
+          <!--<input type="text" class="form-control" id="notas" name="notas" value="<?php echo $post['pr_notas'];?>">-->
+        </div>
+
         <div class="form-group col-mod-12">
           <button type="submit" class="form-group btn btn-primary" id="enviar" name="enviar">Registrar</button>
           <button type="reset"  class="form-group btn btn-default" id="borrar" name="borrar">Limpiar</button>
           <a href="./proyectos.php" class="form-group btn btn-danger pull-right">Salir</a>
         </div>
-
-        <hr>
 
        </form>
       </div>

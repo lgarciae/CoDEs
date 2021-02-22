@@ -1,12 +1,22 @@
 <?php
   require('cabecera.php');
 ?>
+<style media="screen">
+  body{
+      background-image: url("./img/fondo.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+  }
 
+</style>
 <body>
-		<div class="container" style="margin: auto; width:350px; background-color:#fff; padding:auto;">
-        <div class="" align="center">
+  <br>
+    <div class="container" style="margin: auto; width:350px; background-color:#fff; padding:auto; opacity:0.8; -webkit-box-shadow: 9px 15px 13px 0px rgba(0,0,0,0.75); -moz-box-shadow: 9px 15px 13px 0px rgba(0,0,0,0.75); box-shadow: 9px 15px 13px 0px rgba(0,0,0,0.75);">
+        <!--<div class="" align="center">
             <img src="./img/imagen.png" align="middle" class="img-responsive" alt="Imagen Corporativa" width="150" height="100">
-        </div>
+        </div>-->
 
 		    <form action="./authenticate.php" method="post">
           <div class="encabezado">

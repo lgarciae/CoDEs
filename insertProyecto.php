@@ -1,18 +1,18 @@
 <?php
       require("conectDB.php");
       session_start();
-
       $proyecto = strtoupper(htmlspecialchars($_POST["proyecto"]));
       $colabora = strtoupper(htmlspecialchars($_POST["colabora"]));
       $solicito = strtoupper(htmlspecialchars($_POST["solicito"]));
+      $notas    = strtoupper(htmlspecialchars($_POST["notas"]));
       $finicio  = $_POST["finicio"];
       $ffinal   = $_POST["ffinal"];
       $estatus  = $_POST["estatus"];
       $acuerdo  = $_POST["acuerdo"];
       $quienes  = $_SESSION["USUARIO"];
 
-      $sql = "INSERT INTO proyectos (pr_nombre, pr_colaboradores, pr_solicito, pr_inicio, pr_fin, pr_status, pr_baja, pr_acuerdo, log_usuario)
-              VALUES ('$proyecto', '$colabora', '$solicito','$finicio','$ffinal','$estatus',0, '$acuerdo','$quienes')";
+      $sql = "INSERT INTO proyectos (pr_nombre, pr_colaboradores, pr_solicito, pr_inicio, pr_fin, pr_status, pr_baja, pr_acuerdo, pr_notas, log_usuario)
+              VALUES ('$proyecto', '$colabora', '$solicito','$finicio','$ffinal','$estatus',0, '$acuerdo','$notas', '$quienes')";
       $stmt = $conn->prepare($sql);
 
       try {

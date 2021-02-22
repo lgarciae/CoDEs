@@ -4,41 +4,41 @@
     $post = get_ProyectoByID($_GET['id']);
     session_start();
 ?>
-<body>
-<div class="container" style="margin: auto; background-color:#fff; padding:auto;">
-  <div class="row">
-  <img src="./img/imagen.png" class="img-responsive" alt="Imagen Corporativa" width="150" height="100">
-
-   <!--<form method="post" action="./actualizaProyecto.php">-->
+<br>
+<!--<body>-->
+<div class="container" style="margin: auto; width:90%; background-color:#fff; padding:auto; opacity:0.8; -webkit-box-shadow: 9px 15px 13px 0px rgba(0,0,0,0.75); -moz-box-shadow: 9px 15px 13px 0px rgba(0,0,0,0.75); box-shadow: 9px 15px 13px 0px rgba(0,0,0,0.75);">
+  <div class="row" style="padding:5px 15px 5px 15px;">
 	 <form method="post" id="frmProyectos">
     	<div class="encabezado">
-        <h3>Modificar Proyecto</h3>
+        <h3 style="margin: auto;">Modificar Proyecto</h3>
         <hr>
       </div>
+
 				<input type="hidden" name="id" value="<?php echo $post['id_proyecto']; ?>">
+
         <div class="form-group col-md-12">
           <label for="proyecto">Nombre Proyecto.:</label>
-          <input type="text" class="form-control" id="proyecto" name="proyecto" value="<?php echo $post['pr_nombre'];?>" placeholder="Nombre proyecto" required autofocus>
+          <input type="text" class="form-control" id="proyecto" name="proyecto" value="<?php echo $post['pr_nombre'];?>" required autofocus>
         </div>
 
         <div class="form-group col-md-6">
           <label for="colabora">Colaborador(es).:</label>
-          <input type="text" class="form-control" id="colabora" name="colabora" value="<?php echo $post['pr_colaboradores'];?>" placeholder="Colaborador/(es)" required>
+          <input type="text" class="form-control" id="colabora" name="colabora" value="<?php echo $post['pr_colaboradores'];?>" required>
         </div>
 
         <div class="form-group col-md-6">
           <label for="solicito">Solicitó.:</label>
-          <input type="text" class="form-control" id="solicito" name="solicito" value="<?php echo $post['pr_solicito'];?>" placeholder="Solicitó" required>
+          <input type="text" class="form-control" id="solicito" name="solicito" value="<?php echo $post['pr_solicito'];?>" required>
         </div>
 
         <div class="form-group col-md-3">
           <label for="inicio">Fecha Inicial.:</label>
-          <input type="date" class="form-control" id="finicio" name="finicio" value="<?php echo $post['pr_inicio'];?>" placeholder="Fecha Inicio" required>
+          <input type="date" class="form-control" id="finicio" name="finicio" value="<?php echo $post['pr_inicio'];?>" required>
         </div>
 
         <div class="form-group col-md-3">
           <label for="final">Fecha Final</label>
-          <input type="date" class="form-control" id="ffinal" name="ffinal" value="<?php echo $post['pr_fin'];?>" placeholder="Fecha Final" required>
+          <input type="date" class="form-control" id="ffinal" name="ffinal" value="<?php echo $post['pr_fin'];?>" >
         </div>
 
         <div class="form-group col-md-3">
@@ -64,17 +64,16 @@
 
         <div class="form-group col-md-12">
           <label for="notas">Comentarios.:</label><br>
-          <textarea name="notas" rows="10" cols="168"><?php echo $post['pr_notas'];?></textarea>
-          <!--<input type="text" class="form-control" id="notas" name="notas" value="<?php echo $post['pr_notas'];?>">-->
+          <textarea name="notas" rows="10" style="width:100%;"><?php echo $post['pr_notas'];?></textarea>
         </div>
 
         <div class="form-group col-md_12">
           <button type="submit" class="btn btn-success" id="enviar" name="enviar">Actualizar</button>
           <a class="btn btn-danger pull-right" href="./proyectos.php">Salir</a>
         </div>
-        <hr>
 
   </form>
+ </div>
 </div>
   <script src="jquery-3.4.1.min.js"></script>
   <footer style="text-align:center;">© Tienda de Descuento Arteli - <?php echo date("Y");?></footer>

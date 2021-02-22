@@ -23,10 +23,10 @@
        <a class="navbar-brand" href="#">Coordinación de Desarrollo</a>
      </div>
      <ul class="nav navbar-nav"> <!-- Elementos del Menu cargados a la izquierda-->
-       <li class="active"><a href="#"><i class="fa fa-fw fa-home"></i> Dashboard</a></li>
+       <li class="active"><a href="./dashboard.php"><i class="fa fa-fw fa-area-chart"></i> Dashboard</a></li>
 
        <li class="dropdown">
-         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Seguimiento
+         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-fw fa-code-fork"></i> Seguimiento
          <span class="caret"></span></a>
          <ul class="dropdown-menu">
            <li><a href="./proyectos.php"><i class="fa fa-fw fa-book"></i> Proyectos</a></li>
@@ -34,18 +34,18 @@
        </li>
 
        <li class="dropdown">
-         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reportes
+         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon">&#xe045;</span> Reportes
          <span class="caret"></span></a>
          <ul class="dropdown-menu">
-           <li><a href="./reporteProyectos.php"><i class="fa fa-fw"></i> Proyecto por Colaborador</a></li>
-           <li><a href="./repAcuerdos.php"><i class="fa fa-fw"></i> Acuerdos de la Administración</a></li>
-           <li><a href="./repProyectos.php"><i class="fa fa-fw"></i> Impresión de Acuerdos</a></li>
+           <li><a href="./reporteProyectos.php"><i class="fa fa-fw"></i> Colaborador y Proyecto asignado</a></li>
+           <li><a href="./repAcuerdos.php"><i class="fa fa-fw"></i> Listado de Acuerdos</a></li>
+           <li><a href="./repProyectos.php" target="_blank"><i class="fa fa-fw"></i> Impresión de Listado de Acuerdos</a></li>
 
          </ul>
        </li>
 
        <li class="dropdown">
-         <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Configuración
+         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-fw fa-cogs"></i> Configuración
          <span class="caret"></span></a>
          <ul class="dropdown-menu">
            <li><a href="#"><i class="fa fa-fw fa-search"></i> Inventarios</a></li>

@@ -83,4 +83,18 @@
       }
       return $dato;
     }
+
+    function get_Proyectos()
+    {
+      $conn	 = connectPDO();
+      $sql   = "SELECT count(id_proyecto) FROM proyectos";
+      $stmt  = $conn->prepare($sql);
+      $stmt -> execute(array($id));
+      $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+      if ($resultado){
+        $dato= $resultado;
+      }
+      return $dato;
+    }
+
   ?>
